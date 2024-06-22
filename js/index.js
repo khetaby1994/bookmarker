@@ -65,6 +65,8 @@ function saveBookmark() {
         var urlModif
         if (urlInput.value.includes('https:')) {
             urlModif=urlInput.value.replace('https:','')
+        }else{
+            urlModif=urlInput.value;
         }
     
         var site={
