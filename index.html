@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body class="bg-yellow">
+    <div class="container">
+        <!-- =======      title      ======= -->
+        <div class="d-flex justify-content-center">
+            <h1 class="pacifico mt-3 py-5 position-relative">Bookmarker</h1>
+        </div>
+        <!-- =======      form      ======= -->
+        <form action="">
+            <div class="my-3 d-flex justify-content-center">
+                <h2 class="fw-bold greenSubtitle"><i class="fa-solid fa-bookmark mx-3 iconGradient"></i>Bookmark your favorite sites<i class="fa-solid fa-bookmark mx-3 iconGradient"></i></h2>
+            </div>
+            <div class="my-3">
+                <label for="siteName" class="form-label fw-bold"><i class="fa-solid fa-book-bookmark px-2"></i>Site Name</label>
+                <!-- <input type="text" class="form-control w-100" id="siteName" placeholder="Bookmark Name" oninput="validate(nameInput,nameRegex)"> -->
+                <input type="text" class="form-control w-100" id="siteName" placeholder="Bookmark Name" onkeyup="validateName()">
+            </div>
+            <div class="my-3">
+                <label for="siteUrl" class="form-label fw-bold"><i class="fa-solid fa-link px-2"></i>Website URL</label>
+                <!-- <input type="email" class="form-control w-100" id="siteUrl" placeholder="Website URL" oninput="validate(urlInput,urlRegex)"> -->
+                <input type="email" class="form-control w-100" id="siteUrl" placeholder="Website URL" oninput="validateUrl()">
+            </div>
+            <div class="my-3 d-flex justify-content-center">
+                <button type="button" class="btn btn-danger px-5" id="submitBtn" onclick="saveBookmark()">Submit</button>
+            </div>
+            
+        </form>
+        <!-- =======      table      ======= -->
+        <table class="my-3 table text-center">
+            <thead>
+              <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Website Name</th>
+                <th scope="col">Visit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="rowCont">
+                <tr>
+                  <td scope="col">#</td>
+                  <td scope="col">Name</td>
+                  <td scope="col">
+                    <a href="https://" target="_blank" class="btn btn-visit text-white"><i class="fa-solid fa-eye"></i> Visit</a>
+                  </td>
+                  <td scope="col">
+                    <button type="button" onclick="deleteBookmark()" class="btn btn-delete text-white">
+                        <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+
+
+
+
+    <script src="./fontawesome/js/all.min.js"></script> 
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script> 
+    <script src="./js/index.js"></script> 
+</body>
+</html>
